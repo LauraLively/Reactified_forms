@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import { withRouter } from 'react-router-dom'
 
 class Register extends React.Component {
     constructor(props) {
@@ -7,7 +8,6 @@ class Register extends React.Component {
         this.state = {
             firstName: '',
             lastName: '',
-            userName: '',
             email: '',
             phoneNumber: '',
             password: '',
@@ -25,6 +25,7 @@ class Register extends React.Component {
     handleSubmit(event) {
       console.log(this.state);
       event.preventDefault();
+      this.props.history.push("./welcome")
     }
   
     render() {
@@ -66,4 +67,4 @@ class Register extends React.Component {
     }
   }
   
-  export default Register;
+  export default withRouter(Register);

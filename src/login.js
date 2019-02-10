@@ -1,7 +1,18 @@
 import React from 'react';
 import './index.css';
-import { Redirect } from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from "react-router-dom"
+import { withRouter } from 'react-router-dom'
 
+const Button = styled.button`
+background: transparent;
+border-radius: 3px;
+border: 1px solid teal;
+font-size: 1em;
+color: teal;
+margin: 0 1em;
+padding: 0.25em 1em;
+`
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -13,7 +24,6 @@ class Login extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
     handleChange(evt) {
       this.setState({[evt.target.name]: evt.target.value});
     }
@@ -21,6 +31,7 @@ class Login extends React.Component {
     handleSubmit(event) {
       console.log(this.state);
       event.preventDefault();
+      this.props.history.push("./welcome");
     }
   
     render() {
@@ -38,11 +49,11 @@ class Login extends React.Component {
           <br/>
           <input type="submit" value="Submit" />
           <br/>
-          <span className="forgot">Forgot password?</span>
+          <Link to="/forgot"><Button>Forgot password?</Button></Link>
 
         </form>
       );
     }
   }
   
-  export default Login;
+  export default withRouter(Login);

@@ -3,6 +3,8 @@ import { Route, NavLink, BrowserRouter, } from "react-router-dom";
 import Home from "./Home";
 import Register from "./Register";
 import Login from "./login";
+import forgot from "./forgot"
+import welcome from "./welcome"
 
 class Main extends Component {
     render() {
@@ -19,6 +21,8 @@ class Main extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/Register" component={Register} />
                         <Route path="/Login" component={Login} />
+                        <Route path="/forgot" component={forgot} />
+                        <Route path="/welcome" component={welcome}/>
                     </div>
                 </div>
             </BrowserRouter>
