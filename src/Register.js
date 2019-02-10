@@ -31,6 +31,7 @@ class Register extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
+        <h2>Please Register!</h2>
           <label>
             <input type="text" name="firstName" value={this.state.firstName} 
             onChange={this.handleChange} placeholder="First Name"/>
